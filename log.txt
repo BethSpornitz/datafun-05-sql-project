@@ -16,3 +16,83 @@
 2024-09-17 14:03:48,671 - INFO - Program ended
 2024-09-17 14:08:01,211 - INFO - Program started
 2024-09-17 14:08:01,419 - INFO - Program ended
+2024-09-17 15:01:41,401 - INFO - Program started
+2024-09-17 15:03:02,035 - INFO - Program started
+2024-09-17 15:10:24,468 - INFO - Program started
+2024-09-17 15:11:09,528 - INFO - Program started
+2024-09-17 15:11:09,751 - ERROR - Error inserting new records: near "Riley": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 110, in insert_new_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Riley": syntax error
+2024-09-17 15:11:09,754 - ERROR - Error deleting records: near "Wind": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 121, in delete_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Wind": syntax error
+2024-09-17 15:11:09,755 - INFO - Executed aggregation queries from sql\query_aggregation.sql
+2024-09-17 15:13:03,772 - INFO - Program started
+2024-09-17 15:13:03,991 - ERROR - Error inserting new records: near "Riley": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 110, in insert_new_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Riley": syntax error
+2024-09-17 15:13:03,993 - ERROR - Error deleting records: near "Wind": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 121, in delete_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Wind": syntax error
+2024-09-17 15:13:03,996 - INFO - Executed aggregation queries from sql\query_aggregation.sql
+2024-09-17 15:13:03,998 - INFO - Executed filtered queries from sql\query_filter.sql
+2024-09-17 15:13:03,999 - INFO - Executed GROUP BY queries from sql\query_group_by.sql
+2024-09-17 15:13:04,001 - INFO - Executed JOIN queries from sql\query_join.sql
+2024-09-17 15:13:04,004 - INFO - Executed sorting queries from sql\query_sorting.sql
+2024-09-17 15:13:04,019 - INFO - Updated records using sql\update_records.sql
+2024-09-17 15:13:04,020 - INFO - Program ended
+2024-09-17 17:35:26,738 - INFO - Program started
+2024-09-17 17:35:26,974 - ERROR - Error inserting new records: near "Riley": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 110, in insert_new_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Riley": syntax error
+2024-09-17 17:35:26,977 - ERROR - Error deleting records: near "Wind": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 121, in delete_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Wind": syntax error
+2024-09-17 17:35:26,980 - INFO - Executed aggregation queries from sql\query_aggregation.sql
+2024-09-17 17:35:26,981 - INFO - Executed filtered queries from sql\query_filter.sql
+2024-09-17 17:35:26,982 - INFO - Executed GROUP BY queries from sql\query_group_by.sql
+2024-09-17 17:35:26,983 - INFO - Executed JOIN queries from sql\query_join.sql
+2024-09-17 17:37:50,360 - INFO - Program started
+2024-09-17 17:37:50,574 - ERROR - Error inserting new records: near "Riley": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 110, in insert_new_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Riley": syntax error
+2024-09-17 17:37:50,578 - ERROR - Error deleting records: near "Wind": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 121, in delete_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Wind": syntax error
+2024-09-17 17:37:50,581 - INFO - Executed aggregation queries from sql\query_aggregation.sql
+2024-09-17 17:37:50,582 - INFO - Executed filtered queries from sql\query_filter.sql
+2024-09-17 17:37:50,585 - INFO - Executed GROUP BY queries from sql\query_group_by.sql
+2024-09-17 17:37:50,587 - INFO - Executed JOIN queries from sql\query_join.sql
+2024-09-17 17:37:50,591 - INFO - Executed sorting queries from sql\query_sorting.sql
+2024-09-17 17:37:50,605 - INFO - Updated records using sql\update_records.sql
+2024-09-17 17:37:50,605 - INFO - Program ended
+2024-09-17 17:41:30,922 - INFO - Program started
+2024-09-17 17:41:31,155 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-17 17:41:31,157 - ERROR - Error deleting records: near "Wind": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 121, in delete_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Wind": syntax error
+2024-09-17 17:41:31,161 - INFO - Executed aggregation queries from sql\query_aggregation.sql
+2024-09-17 17:41:31,163 - INFO - Executed filtered queries from sql\query_filter.sql
+2024-09-17 17:41:31,164 - INFO - Executed GROUP BY queries from sql\query_group_by.sql
+2024-09-17 17:41:31,166 - INFO - Executed JOIN queries from sql\query_join.sql
+2024-09-17 17:41:31,174 - INFO - Executed sorting queries from sql\query_sorting.sql
+2024-09-17 17:41:31,189 - INFO - Updated records using sql\update_records.sql
+2024-09-17 17:41:31,190 - INFO - Program ended

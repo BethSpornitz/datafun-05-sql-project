@@ -3,13 +3,10 @@
 # Standard library imports
 import sqlite3
 import pathlib
-import csv
 import logging
 
 # External library imports (requires virtual environment)
 import pandas as pd
-
-#Local module imports (if needed)
 
 ###############################
 #Logging
@@ -23,8 +20,6 @@ import pandas as pd
 
 # Configure logging to write to a file, appending new logs to the existing file
 logging.basicConfig(filename='log.txt', level=logging.DEBUG, filemode='a', format='%(asctime)s - %(levelname)s - %(message)s')
-logging.info("Program started") # add this at the beginning of the main method
-logging.info("Program ended")  # add this at the end of the main method
 
 ###############################
 # File Paths
@@ -32,7 +27,7 @@ logging.info("Program ended")  # add this at the end of the main method
 
 # Paths to the CSV files
 artists_data_path = pathlib.Path('data') / 'artists.csv'
-songs_data_path = pathlib.Path('data') / 'song.csv'
+songs_data_path = pathlib.Path('data') / 'songs.csv'
 
 # Database file path
 db_file_path = pathlib.Path('music_database.db')
@@ -40,7 +35,12 @@ db_file_path = pathlib.Path('music_database.db')
 #SQL file path
 sql_file_path = pathlib.Path('sql') / 'create_tables.sql'
 
-'''
+
+###############################
+# Define Functions
+###############################
+
+
 def verify_and_create_folders(paths):
     """Verify and create folders if they don't exist."""
     for path in paths:
@@ -71,71 +71,40 @@ def create_tables(db_file_path, sql_file_path):
     except sqlite3.Error as e:
         print(f"Error creating tables: {e}")
 
-def insert_data_from_csv(db_file_path, author_data_path, book_data_path):
+def insert_data_from_csv(db_file_path, artists_data_path, songs_data_path):
     """Read data from CSV files and insert the records into their respective tables."""
     try:
-        # Verify that the CSV files exist and are not empty
-        if not author_data_path.exists():
-            raise FileNotFoundError(f"{author_data_path} does not exist")
-        if not book_data_path.exists():
-            raise FileNotFoundError(f"{book_data_path} does not exist")
+        #Verify that the CSV files exist and are not empty
+        if not artists_data_path.exists():
+            raise FileNotFoundError(f"{artists_data_path} does not exist")
+        if not songs_data_path.exists():
+            raise FileNotFoundError(f"{songs_data_path} does not exist")
 
-        authors_df = pd.read_csv(author_data_path)
-        books_df = pd.read_csv(book_data_path)
+        artists_df = pd.read_csv(artists_data_path)
+        songs_df = pd.read_csv(songs_data_path)
 
-        print(f"Authors DataFrame:\n{authors_df.head()}")
-        print(f"Books DataFrame:\n{books_df.head()}")
+        print(f"Artists DataFrame:\n{artists_df.head()}")
+        print(f"Songs DataFrame:\n{songs_df.head()}")
 
         with sqlite3.connect(db_file_path) as conn:
-            authors_df.to_sql("authors", conn, if_exists="replace", index=False)
-            books_df.to_sql("books", conn, if_exists="replace", index=False)
+            artists_df.to_sql("artists", conn, if_exists="replace", index=False)
+            songs_df.to_sql("songs", conn, if_exists="replace", index=False)
             print("Data inserted successfully.")
     except (sqlite3.Error, pd.errors.EmptyDataError, FileNotFoundError) as e:
         print(f"Error inserting data: {e}")
 
 def main():
-    paths_to_verify = [sql_file_path, author_data_path, book_data_path]
-    verify_and_create_folders(paths_to_verify)
 
-    create_database(db_file_path)
-    create_tables(db_file_path, sql_file_path)
-    insert_data_from_csv(db_file_path, author_data_path, book_data_path)
+    logging.info("Program started") # add this at the beginning of the main method
 
-if __name__ == "__main__":
-    main()
-'''
-
-# Your code here....
-# Define paths...
-# Define functions...
-
-# Define the main function that will call your functions
-def main():
     paths_to_verify = [sql_file_path, artists_data_path, songs_data_path]
     verify_and_create_folders(paths_to_verify)
-    
+
     create_database(db_file_path)
     create_tables(db_file_path, sql_file_path)
     insert_data_from_csv(db_file_path, artists_data_path, songs_data_path)
 
-
-
-
-
-
-
-
-
-##############################
-# Main function
-##############################
-
-def main():
-    ...
-
-    # Create database schema and populate with data
-    ... your code here to perform all required operations
-
+    logging.info("Program ended")  # add this at the end of the main method
 
 #####################################
 # Conditional Execution

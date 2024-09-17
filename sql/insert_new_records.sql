@@ -1,5 +1,4 @@
 -- insert_new_records.sql
-
 -- Insert new records into the artists table
 INSERT INTO artists (name, birth_year, genre) VALUES
 ('Queen', 1970, 'Rock'),

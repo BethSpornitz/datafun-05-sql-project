@@ -12,8 +12,8 @@ DROP TABLE IF EXISTS artists;
 -- Be sure to create the standalone artists table BEFORE creating the songs table.
 
 CREATE TABLE artists (
-    artist_id INTEGER PRIMARY KEY,
-    name TEXT,
+    artist_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
     birth_year INTEGER,
     genre TEXT
 );
@@ -22,10 +22,11 @@ CREATE TABLE artists (
 -- Note that the artists table has no foreign keys, so it is a standalone table
 
 CREATE TABLE songs (
-    song_id INTEGER PRIMARY KEY,
-    title TEXT,
+    song_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
     release_year INTEGER,
     duration TEXT,
+    album, TEXT,
     artist_ID INTEGER,
-    FOREIGN KEY (artist_id) REFERENCES Artists (artist_id)
+    FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
 );

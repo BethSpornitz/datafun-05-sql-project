@@ -96,3 +96,56 @@ sqlite3.OperationalError: near "Wind": syntax error
 2024-09-17 17:41:31,174 - INFO - Executed sorting queries from sql\query_sorting.sql
 2024-09-17 17:41:31,189 - INFO - Updated records using sql\update_records.sql
 2024-09-17 17:41:31,190 - INFO - Program ended
+2024-09-17 17:42:26,062 - INFO - Program started
+2024-09-17 17:42:26,274 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-17 17:42:26,276 - ERROR - Error deleting records: near "Wind": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 121, in delete_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Wind": syntax error
+2024-09-17 17:42:26,280 - INFO - Executed aggregation queries from sql\query_aggregation.sql
+2024-09-17 17:42:26,282 - INFO - Executed filtered queries from sql\query_filter.sql
+2024-09-17 17:42:26,283 - INFO - Executed GROUP BY queries from sql\query_group_by.sql
+2024-09-17 17:42:26,285 - INFO - Executed JOIN queries from sql\query_join.sql
+2024-09-17 17:42:26,291 - INFO - Executed sorting queries from sql\query_sorting.sql
+2024-09-17 17:42:26,308 - INFO - Updated records using sql\update_records.sql
+2024-09-17 17:42:26,309 - INFO - Program ended
+2024-09-17 17:48:33,067 - INFO - Program started
+2024-09-17 17:48:33,353 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-17 17:48:33,361 - ERROR - Error deleting records: near "Wind": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 121, in delete_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Wind": syntax error
+2024-09-17 17:48:33,373 - INFO - Executed aggregation queries from sql\query_aggregation.sql
+2024-09-17 17:48:33,380 - INFO - Executed filtered queries from sql\query_filter.sql
+2024-09-17 17:48:33,389 - INFO - Executed GROUP BY queries from sql\query_group_by.sql
+2024-09-17 17:48:33,397 - INFO - Executed JOIN queries from sql\query_join.sql
+2024-09-17 17:48:33,411 - INFO - Executed sorting queries from sql\query_sorting.sql
+2024-09-17 17:48:33,441 - INFO - Updated records using sql\update_records.sql
+2024-09-17 17:48:33,442 - INFO - Program ended
+2024-09-17 17:54:34,653 - INFO - Program started
+2024-09-17 17:54:34,895 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-17 17:54:34,899 - ERROR - Error deleting records: near "Wind": syntax error
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\music_crosswalk.py", line 121, in delete_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: near "Wind": syntax error
+2024-09-17 17:54:34,905 - INFO - Executed aggregation queries from sql\query_aggregation.sql
+2024-09-17 17:54:34,908 - INFO - Executed filtered queries from sql\query_filter.sql
+2024-09-17 17:54:34,910 - INFO - Executed GROUP BY queries from sql\query_group_by.sql
+2024-09-17 17:54:34,913 - INFO - Executed JOIN queries from sql\query_join.sql
+2024-09-17 17:54:34,922 - INFO - Executed sorting queries from sql\query_sorting.sql
+2024-09-17 17:54:34,945 - INFO - Updated records using sql\update_records.sql
+2024-09-17 17:54:34,946 - INFO - Program ended
+2024-09-17 17:57:47,376 - INFO - Program started
+2024-09-17 17:57:47,604 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-17 18:00:07,316 - INFO - Program started
+2024-09-17 18:00:07,639 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-17 18:00:07,653 - INFO - Executed aggregation queries from sql\query_aggregation.sql
+2024-09-17 18:00:07,661 - INFO - Executed filtered queries from sql\query_filter.sql
+2024-09-17 18:00:07,673 - INFO - Executed GROUP BY queries from sql\query_group_by.sql
+2024-09-17 18:00:07,682 - INFO - Executed JOIN queries from sql\query_join.sql
+2024-09-17 18:00:07,697 - INFO - Executed sorting queries from sql\query_sorting.sql
+2024-09-17 18:00:07,722 - INFO - Updated records using sql\update_records.sql
+2024-09-17 18:00:07,723 - INFO - Program ended

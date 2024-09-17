@@ -112,6 +112,17 @@ def insert_new_records(db_file_path):
     except sqlite3.Error as e:
         logging.exception(f"Error inserting new records: {e}")
 
+def verify_records(db_file_path):
+    """Verify records in the tables."""
+    try:
+        with sqlite3.connect(db_file_path) as conn:
+            artists_df = pd.read_sql_query("SELECT * FROM artists", conn)
+            songs_df = pd.read_sql_query("SELECT * FROM songs", conn)
+            print("Artists DataFrame:\n", artists_df)
+            print("Songs DataFrame:\n", songs_df)
+    except sqlite3.Error as e:
+        print(f"Error verifying records: {e}")
+
 def delete_records(db_file_path):
     """Delete records from the database."""
     try:
@@ -224,6 +235,7 @@ def main():
     create_tables(db_file_path, create_tables_sql_file_path)
     insert_data_from_csv(db_file_path, artists_data_path, songs_data_path)
     insert_new_records(db_file_path)
+    verify_records(db_file_path)
     delete_records(db_file_path)
     query_aggregation(db_file_path)
     query_filter(db_file_path)

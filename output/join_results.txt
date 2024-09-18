@@ -2,7 +2,6 @@ JOIN Query Results
 ('The Beatles', 'Hey Jude')
 ('Adele', 'Someone Like You')
 ('Bob Dylan', 'Like a Rolling Stone')
-('Elton John', 'Rocket Man')
 ('Led Zeppelin', 'Stairway to Heaven')
 ('The Beatles', 'Let It Be')
 ('Adele', 'Rolling in the Deep')

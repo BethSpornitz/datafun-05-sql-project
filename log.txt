@@ -461,3 +461,33 @@ sqlite3.OperationalError: near "Wind": syntax error
 2024-09-17 20:24:23,509 - INFO - Wrote results to output\join_results.txt
 2024-09-17 20:24:23,511 - INFO - Wrote results to output\sorting_results.txt
 2024-09-17 20:24:23,511 - INFO - Program ended
+2024-09-18 11:26:40,307 - INFO - Program started
+2024-09-18 11:26:40,644 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-18 11:26:40,794 - INFO - Deleted records using sql\delete_records.sql
+2024-09-18 11:26:40,816 - INFO - Updated records using sql\update_records.sql
+2024-09-18 11:26:40,827 - INFO - Wrote results to output\aggregation_results.txt
+2024-09-18 11:26:40,836 - INFO - Wrote results to output\filtered_results.txt
+2024-09-18 11:26:40,846 - INFO - Wrote results to output\group_by_results.txt
+2024-09-18 11:26:40,855 - INFO - Wrote results to output\join_results.txt
+2024-09-18 11:26:40,865 - INFO - Wrote results to output\sorting_results.txt
+2024-09-18 11:26:40,865 - INFO - Program ended
+2024-09-18 11:28:13,134 - INFO - Program started
+2024-09-18 11:28:13,374 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-18 11:28:13,419 - INFO - Deleted records using sql\delete_records.sql
+2024-09-18 11:28:13,434 - INFO - Updated records using sql\update_records.sql
+2024-09-18 11:28:13,438 - INFO - Wrote results to output\aggregation_results.txt
+2024-09-18 11:28:13,440 - INFO - Wrote results to output\filtered_results.txt
+2024-09-18 11:28:13,442 - INFO - Wrote results to output\group_by_results.txt
+2024-09-18 11:28:13,447 - INFO - Wrote results to output\join_results.txt
+2024-09-18 11:28:13,451 - INFO - Wrote results to output\sorting_results.txt
+2024-09-18 11:28:13,451 - INFO - Program ended
+2024-09-18 11:41:08,831 - INFO - Program started
+2024-09-18 11:41:09,096 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-18 11:41:09,142 - INFO - Deleted records using sql\delete_records.sql
+2024-09-18 11:41:09,166 - INFO - Updated records using sql\update_records.sql
+2024-09-18 11:41:09,169 - INFO - Wrote results to output\aggregation_results.txt
+2024-09-18 11:41:09,173 - INFO - Wrote results to output\filtered_results.txt
+2024-09-18 11:41:09,175 - INFO - Wrote results to output\group_by_results.txt
+2024-09-18 11:41:09,181 - INFO - Wrote results to output\join_results.txt
+2024-09-18 11:41:09,185 - INFO - Wrote results to output\sorting_results.txt
+2024-09-18 11:41:09,185 - INFO - Program ended

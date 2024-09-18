@@ -11,12 +11,6 @@ import pandas as pd
 ###############################
 #Logging
 ###############################
-# 1. Configure logging to write to a file named log.txt.
-# 2. Log the start of the program using logging.info().
-# 3. Log the end of the program using logging.info().
-# 4. Log exceptions using logging.exception().
-# 5. Log other major events using logging.info().
-# 6. Log the start and end of major functions using logging.debug().
 
 # Configure logging to write to a file, appending new logs to the existing file
 logging.basicConfig(filename='log.txt', level=logging.DEBUG, filemode='a', format='%(asctime)s - %(levelname)s - %(message)s')
@@ -57,21 +51,6 @@ update_records_sql_path = pathlib.Path('sql') / 'update_records.sql'
 ###############################
 # Define Functions
 ###############################
-
-def write_results_to_file(results, output_file_path, title):
-    """Write query results to a file with a title."""
-    try:
-         # Ensure the output folder exists
-        output_file_path.parent.mkdir(parents=True, exist_ok=True)
-
-        with open(output_file_path, 'w') as file:
-            file.write(f"{title}\n")
-            for row in results:
-                file.write(f"{row}\n")
-        logging.info(f"Wrote results to {output_file_path}")
-    except IOError as e:
-        logging.exception(f"Error writing results to file: {e}")
-
 
 def verify_and_create_folders(paths):
     """Verify and create folders if they don't exist."""
@@ -153,6 +132,7 @@ def delete_records(db_file_path):
         with sqlite3.connect(db_file_path) as conn:
             with open(delete_records_sql_path, 'r') as file:
                 sql_script = file.read()
+            print(f"Executing DELETE SQL:\n{sql_script}")  # Log the SQL being executed
             conn.executescript(sql_script)
             logging.info(f"Deleted records using {delete_records_sql_path}")
     except sqlite3.Error as e:
@@ -246,9 +226,25 @@ def update_records(db_file_path):
             with open(update_records_sql_path, 'r') as file:
                 sql_script = file.read()
             conn.executescript(sql_script)
+            print(f"Executing UPDATE SQL:\n{sql_script}")  # Log the SQL being executed
             logging.info(f"Updated records using {update_records_sql_path}")
     except sqlite3.Error as e:
         logging.exception(f"Error updating records: {e}")
+
+
+def write_results_to_file(results, output_file_path, title):
+    """Write query results to a file with a title."""
+    try:
+         # Ensure the output folder exists
+        output_file_path.parent.mkdir(parents=True, exist_ok=True)
+
+        with open(output_file_path, 'w') as file:
+            file.write(f"{title}\n")
+            for row in results:
+                file.write(f"{row}\n")
+        logging.info(f"Wrote results to {output_file_path}")
+    except IOError as e:
+        logging.exception(f"Error writing results to file: {e}")
 
 
 

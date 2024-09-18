@@ -280,12 +280,6 @@ def main():
     update_records(db_file_path)
 
     # Specify the output file paths for results
-    aggregation_output_file = output_folder_path / 'aggregation_results.txt'
-    filter_output_file = output_folder_path / 'filtered_results.txt'
-    group_by_output_file = output_folder_path / 'group_by_results.txt'
-    join_output_file = output_folder_path / 'join_results.txt'
-    sorting_output_file = output_folder_path / 'sorting_results.txt'
-
     query_aggregation(db_file_path, aggregation_output_file)  # Write aggregation results to file
     query_filter(db_file_path, filter_output_file)  # Write filtered results to file
     query_group_by(db_file_path, group_by_output_file)  # Write group by results to file

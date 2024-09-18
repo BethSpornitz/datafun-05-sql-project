@@ -115,6 +115,8 @@ def insert_new_records(db_file_path):
     except sqlite3.Error as e:
         logging.exception(f"Error inserting new records: {e}")
 
+
+#  This function is to help you confirm that the data has been successfully inserted into the artists and songs tables. It acts as a quick check to ensure that the database operations (like inserts) have worked as intended.
 def verify_records(db_file_path):
     """Verify records in the tables."""
     try:
@@ -138,6 +140,7 @@ def delete_records(db_file_path):
     except sqlite3.Error as e:
         logging.exception(f"Error deleting records: {e}")
 
+ #This query will produce a result set that indicates how many songs are associated with each artist.
 def query_aggregation(db_file_path, output_file_path):
     """Perform aggregation queries and write results to a file."""
     try:
@@ -153,6 +156,7 @@ def query_aggregation(db_file_path, output_file_path):
     except sqlite3.Error as e:
         logging.exception(f"Error executing aggregation queries: {e}")
 
+#This filters data by a specified data element (like filtering all of the pop songs).
 def query_filter(db_file_path, output_file_path):
     """Perform filtered queries."""
     try:
@@ -171,6 +175,7 @@ def query_filter(db_file_path, output_file_path):
     except sqlite3.Error as e:
         logging.exception(f"Error executing filtered queries: {e}")
 
+#This will query the database and group the data (like showing how many songs each artist has in the table with one row for each artist).
 def query_group_by(db_file_path, output_file_path):
     """Perform queries with GROUP BY clause."""
     try:
@@ -189,6 +194,8 @@ def query_group_by(db_file_path, output_file_path):
     except sqlite3.Error as e:
         logging.exception(f"Error executing GROUP BY queries: {e}")
 
+
+#This will join columns from tables together (like joining the artist with the song name).
 def query_join(db_file_path, output_file_path):
     """Perform queries with JOIN operations."""
     try:
@@ -204,6 +211,7 @@ def query_join(db_file_path, output_file_path):
     except sqlite3.Error as e:
         logging.exception(f"Error executing JOIN queries: {e}")
 
+#This will query the database and sort specified data (like sorting songs by publiscation date).
 def query_sorting(db_file_path, output_file_path):
     """Perform sorting queries."""
     try:
@@ -219,6 +227,7 @@ def query_sorting(db_file_path, output_file_path):
     except sqlite3.Error as e:
         logging.exception(f"Error executing sorting queries: {e}")
 
+#This will update a record already in the database.
 def update_records(db_file_path):
     """Update records in the database."""
     try:
@@ -231,7 +240,7 @@ def update_records(db_file_path):
     except sqlite3.Error as e:
         logging.exception(f"Error updating records: {e}")
 
-
+#This will write the results for a function to a specified file.
 def write_results_to_file(results, output_file_path, title):
     """Write query results to a file with a title."""
     try:
@@ -270,7 +279,6 @@ def main():
     ]
     
     verify_and_create_folders(paths_to_verify)
-
     create_database(db_file_path)
     create_tables(db_file_path, create_tables_sql_file_path)
     insert_data_from_csv(db_file_path, artists_data_path, songs_data_path)

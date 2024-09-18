@@ -32,6 +32,16 @@ songs_data_path = pathlib.Path('data') / 'songs.csv'
 # Database file path
 db_file_path = pathlib.Path('music_database.db')
 
+# Define output folder path
+output_folder_path = pathlib.Path('output')
+
+#Define output file paths within the output folder
+aggregation_output_file = output_folder_path / 'aggregation_results.txt'
+filter_output_file = output_folder_path / 'filtered_results.txt'
+group_by_output_file = output_folder_path / 'group_by_results.txt'
+join_output_file = output_folder_path / 'join_results.txt'
+sorting_output_file = output_folder_path / 'sorting_results.txt'
+
 #SQL file path
 create_tables_sql_file_path = pathlib.Path('sql') / 'create_tables.sql'
 insert_new_records_sql_path = pathlib.Path('sql') / 'insert_new_records.sql'
@@ -47,6 +57,20 @@ update_records_sql_path = pathlib.Path('sql') / 'update_records.sql'
 ###############################
 # Define Functions
 ###############################
+
+def write_results_to_file(results, output_file_path, title):
+    """Write query results to a file with a title."""
+    try:
+         # Ensure the output folder exists
+        output_file_path.parent.mkdir(parents=True, exist_ok=True)
+
+        with open(output_file_path, 'w') as file:
+            file.write(f"{title}\n")
+            for row in results:
+                file.write(f"{row}\n")
+        logging.info(f"Wrote results to {output_file_path}")
+    except IOError as e:
+        logging.exception(f"Error writing results to file: {e}")
 
 
 def verify_and_create_folders(paths):
@@ -134,66 +158,84 @@ def delete_records(db_file_path):
     except sqlite3.Error as e:
         logging.exception(f"Error deleting records: {e}")
 
-def query_aggregation(db_file_path):
-    """Perform aggregation queries."""
+def query_aggregation(db_file_path, output_file_path):
+    """Perform aggregation queries and write results to a file."""
     try:
         with sqlite3.connect(db_file_path) as conn:
             with open(query_aggregation_sql_path, 'r') as file:
                 sql_script = file.read()
-            results = conn.execute(sql_script).fetchall()
-            print("Aggregation query results:")
-            for row in results:
-                print(row)
-            conn.executescript(sql_script)
-            logging.info(f"Executed aggregation queries from {query_aggregation_sql_path}")
+
+            cursor = conn.cursor()
+            cursor.execute(sql_script)
+            
+            results = cursor.fetchall()
+            write_results_to_file(results, output_file_path, "Aggregation Query Results")
     except sqlite3.Error as e:
         logging.exception(f"Error executing aggregation queries: {e}")
 
-def query_filter(db_file_path):
+def query_filter(db_file_path, output_file_path):
     """Perform filtered queries."""
     try:
         with sqlite3.connect(db_file_path) as conn:
             with open(query_filter_sql_path, 'r') as file:
                 sql_script = file.read()
-            conn.executescript(sql_script)
-            logging.info(f"Executed filtered queries from {query_filter_sql_path}")
+        
+            cursor = conn.cursor()
+            cursor.execute(sql_script)
+            
+            # Fetch all results
+            results = cursor.fetchall()
+            
+            # Write results to a file
+            write_results_to_file(results, output_file_path, "Filtered Query Results")
     except sqlite3.Error as e:
         logging.exception(f"Error executing filtered queries: {e}")
 
-def query_group_by(db_file_path):
+def query_group_by(db_file_path, output_file_path):
     """Perform queries with GROUP BY clause."""
     try:
         with sqlite3.connect(db_file_path) as conn:
             with open(query_group_by_sql_path, 'r') as file:
                 sql_script = file.read()
-            conn.executescript(sql_script)
+        
+            cursor = conn.cursor()
+            cursor.execute(sql_script)
+            
+            results = cursor.fetchall()
+            write_results_to_file(results, output_file_path, "GROUP BY Query Results")
+    except sqlite3.Error as e:
+
             logging.info(f"Executed GROUP BY queries from {query_group_by_sql_path}")
     except sqlite3.Error as e:
         logging.exception(f"Error executing GROUP BY queries: {e}")
 
-def query_join(db_file_path):
+def query_join(db_file_path, output_file_path):
     """Perform queries with JOIN operations."""
     try:
         with sqlite3.connect(db_file_path) as conn:
             with open(query_join_sql_path, 'r') as file:
                 sql_script = file.read()
-            results = conn.execute(sql_script).fetchall()
-            logging.info(f"Executed JOIN queries from {query_join_sql_path}")
-            print("JOIN query results:")
-            for row in results:
-                print(row)
-    except sqlite3.Error as e:
-        logging.exception("Error executing JOIN queries")
-        print(f"Error executing JOIN queries: {e}")
 
-def query_sorting(db_file_path):
+            cursor = conn.cursor()
+            cursor.execute(sql_script)
+            
+            results = cursor.fetchall()
+            write_results_to_file(results, output_file_path, "JOIN Query Results")
+    except sqlite3.Error as e:
+        logging.exception(f"Error executing JOIN queries: {e}")
+
+def query_sorting(db_file_path, output_file_path):
     """Perform sorting queries."""
     try:
         with sqlite3.connect(db_file_path) as conn:
             with open(query_sorting_sql_path, 'r') as file:
                 sql_script = file.read()
-            conn.executescript(sql_script)
-            logging.info(f"Executed sorting queries from {query_sorting_sql_path}")
+
+            cursor = conn.cursor()
+            cursor.execute(sql_script)
+            
+            results = cursor.fetchall()
+            write_results_to_file(results, output_file_path, "Sorting Query Results")
     except sqlite3.Error as e:
         logging.exception(f"Error executing sorting queries: {e}")
 
@@ -208,13 +250,14 @@ def update_records(db_file_path):
     except sqlite3.Error as e:
         logging.exception(f"Error updating records: {e}")
 
+
+
 #####################################
 #Define Main Function to call functions
 #####################################
 
 def main():
-
-    logging.info("Program started") # add this at the beginning of the main method
+    logging.info("Program started")
 
     paths_to_verify = [
         pathlib.Path('sql') / 'create_tables.sql', 
@@ -227,7 +270,8 @@ def main():
         pathlib.Path('sql') / 'query_sorting.sql',
         pathlib.Path('sql') / 'update_records.sql',
         pathlib.Path('data') / 'artists.csv', 
-        pathlib.Path('data') / 'songs.csv']
+        pathlib.Path('data') / 'songs.csv'
+    ]
     
     verify_and_create_folders(paths_to_verify)
 
@@ -237,14 +281,22 @@ def main():
     insert_new_records(db_file_path)
     verify_records(db_file_path)
     delete_records(db_file_path)
-    query_aggregation(db_file_path)
-    query_filter(db_file_path)
-    query_group_by(db_file_path)
-    query_join(db_file_path)
-    query_sorting(db_file_path)
     update_records(db_file_path)
 
-    logging.info("Program ended")  # add this at the end of the main method
+    # Specify the output file paths for results
+    aggregation_output_file = output_folder_path / 'aggregation_results.txt'
+    filter_output_file = output_folder_path / 'filtered_results.txt'
+    group_by_output_file = output_folder_path / 'group_by_results.txt'
+    join_output_file = output_folder_path / 'join_results.txt'
+    sorting_output_file = output_folder_path / 'sorting_results.txt'
+
+    query_aggregation(db_file_path, aggregation_output_file)  # Write aggregation results to file
+    query_filter(db_file_path, filter_output_file)  # Write filtered results to file
+    query_group_by(db_file_path, group_by_output_file)  # Write group by results to file
+    query_join(db_file_path, join_output_file)  # Write join results to file
+    query_sorting(db_file_path, sorting_output_file)  # Write sorting results to file
+
+    logging.info("Program ended")
 
 #####################################
 # Conditional Execution

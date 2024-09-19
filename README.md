@@ -24,19 +24,20 @@ logging.info("Program ended")  # add this at the end of the main method
 1.  .gitignore  
 2.  README.md 
 3.  requirements.txt 
-4.  data folder with artits.csv  and songs.csv files with data  
+4.  data folder with artits.csv  and songs.csv files with data 
+5.  music_crosswalk.py (for Python code to run sql commands)    
+6.  project.db (database file created using Python code)  
 5.  SQL folder with the following files:  
-6.  create_tables.sql - with sql code to create your database schema using sql  
-7.  insert_records.sql - with sql code to insert at least 10 additional records into each table.  
-8.  update_records.sql - with sql code to update 1 or more records in a table.  
-9.  delete_records.sql - with sql code to delete 1 or more records from a table.  
-10.  query_aggregation.sql - with sql code to use aggregation functions including COUNT, AVG, SUM.  
-11.  query_filter.sql - with sql code to use WHERE to filter data based on conditions.  
-12.  query_sorting.sql - with sql code to use ORDER BY to sort data.  
-13.  query_group_by.sql - with sql code to use GROUP BY clause (and optionally with aggregation)  
-14.  query_join.sql - with sql code to use INNER JOIN operation and optionally include LEFT JOIN, RIGHT JOIN, etc.  
-15.  music_crosswalk.py (for Python code to run sql commands)  
-16.  project.db (database file created using Python code)  
+        a.  create_tables.sql - with sql code to create your database schema using sql  
+        b.  insert_records.sql - with sql code to insert at least 10 additional records into each table.  
+        c.  update_records.sql - with sql code to update 1 or more records in a table.  
+        d.  delete_records.sql - with sql code to delete 1 or more records from a table.  
+        e.  query_aggregation.sql - with sql code to use aggregation functions including COUNT, AVG, SUM.  
+        f.  query_filter.sql - with sql code to use WHERE to filter data based on conditions.  
+        g.  query_sorting.sql - with sql code to use ORDER BY to sort data.  
+        h.  query_group_by.sql - with sql code to use GROUP BY clause (and optionally with aggregation)  
+        i.  query_join.sql - with sql code to use INNER JOIN operation and optionally include LEFT JOIN, RIGHT JOIN, etc.  
+ 
 
 ## Schema Design  
 ### Schema Overview  

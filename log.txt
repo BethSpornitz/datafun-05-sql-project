@@ -521,3 +521,13 @@ sqlite3.OperationalError: near "Wind": syntax error
 2024-09-19 09:56:37,435 - INFO - Wrote results to output\join_results.txt
 2024-09-19 09:56:37,439 - INFO - Wrote results to output\sorting_results.txt
 2024-09-19 09:56:37,439 - INFO - Program ended
+2024-09-19 13:53:20,285 - INFO - Program started
+2024-09-19 13:53:20,592 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-19 13:53:20,650 - INFO - Deleted records using sql\delete_records.sql
+2024-09-19 13:53:20,687 - INFO - Updated records using sql\update_records.sql
+2024-09-19 13:53:20,699 - INFO - Wrote results to output\aggregation_results.txt
+2024-09-19 13:53:20,717 - INFO - Wrote results to output\filtered_results.txt
+2024-09-19 13:53:20,735 - INFO - Wrote results to output\group_by_results.txt
+2024-09-19 13:53:20,752 - INFO - Wrote results to output\join_results.txt
+2024-09-19 13:53:20,762 - INFO - Wrote results to output\sorting_results.txt
+2024-09-19 13:53:20,762 - INFO - Program ended

@@ -11,23 +11,32 @@ git add . git commit -m git push -u origin main
 ## Add external dependencies
 pip install pandas pip install pyarrow
 
+##  Logging
+import logging
+
+--Configure logging to write to a file, appending new logs to the existing file
+logging.basicConfig(filename='log.txt', level=logging.DEBUG, filemode='a', format='%(asctime)s - %(levelname)s - %(message)s')
+
+logging.info("Program started") # add this at the beginning of the main method
+logging.info("Program ended")  # add this at the end of the main method
+
 ## Create files
-.gitignore  
-README.md 
-requirements.txt 
-data folder with artits.csv  and songs.csv files with data  
-SQL folder with the following files:  
-create_tables.sql - with sql code to create your database schema using sql  
-insert_records.sql - with sql code to insert at least 10 additional records into each table.  
-update_records.sql - with sql code to update 1 or more records in a table.  
-delete_records.sql - with sql code to delete 1 or more records from a table.  
-query_aggregation.sql - with sql code to use aggregation functions including COUNT, AVG, SUM.  
-query_filter.sql - with sql code to use WHERE to filter data based on conditions.  
-query_sorting.sql - with sql code to use ORDER BY to sort data.  
-query_group_by.sql - with sql code to use GROUP BY clause (and optionally with aggregation)  
-query_join.sql - with sql code to use INNER JOIN operation and optionally include LEFT JOIN, RIGHT JOIN, etc.  
-music_crosswalk.py (for Python code to run sql commands)  
-project.db (database file created using Python code)  
+1.  .gitignore  
+2.  README.md 
+3.  requirements.txt 
+4.  data folder with artits.csv  and songs.csv files with data  
+5.  SQL folder with the following files:  
+6.  create_tables.sql - with sql code to create your database schema using sql  
+7.  insert_records.sql - with sql code to insert at least 10 additional records into each table.  
+8.  update_records.sql - with sql code to update 1 or more records in a table.  
+9.  delete_records.sql - with sql code to delete 1 or more records from a table.  
+10.  query_aggregation.sql - with sql code to use aggregation functions including COUNT, AVG, SUM.  
+11.  query_filter.sql - with sql code to use WHERE to filter data based on conditions.  
+12.  query_sorting.sql - with sql code to use ORDER BY to sort data.  
+13.  query_group_by.sql - with sql code to use GROUP BY clause (and optionally with aggregation)  
+14.  query_join.sql - with sql code to use INNER JOIN operation and optionally include LEFT JOIN, RIGHT JOIN, etc.  
+15.  music_crosswalk.py (for Python code to run sql commands)  
+16.  project.db (database file created using Python code)  
 
 ## Schema Design  
 ### Schema Overview  
@@ -36,16 +45,16 @@ This schema will have to tables:
 2.  Songs:  Stores details about songs with references to the artist.  
 
 ### Schema Description
-Artists Table: Contains artist_id (primary key), name, birth_year, and genre  
-Songs Table: Contains song_id, title, release_year, duration and author_id 
+1.  Artists Table: Contains artist_id (primary key), name, birth_year, and genre  
+2.  Songs Table: Contains song_id, title, release_year, duration and author_id 
 
 ## Create Python Script to Create and Populate the Database
 
-def create_database(db_file_path)
+-def create_database(db_file_path)
 
-def create_tables(db_file_path, create_tables_sql_file_path)
+-def create_tables(db_file_path, create_tables_sql_file_path)
 
-def insert_data_from_csv(db_file_path, artists_data_path, songs_data_path)
+-def insert_data_from_csv(db_file_path, artists_data_path, songs_data_path)
 
 ## Create SQL Operations
 
@@ -93,3 +102,10 @@ def delete_records(db_file_path)
 #### This will execute the sql file which will write the results for a function to a specified file.  
 -def write_results_to_file(results, output_file_path, title)  
 
+## Define Main Function for SQL Operations Script 
+def main():
+    logging.info("Program started")   
+
+##  Conditional Script Execution  
+if __name__ == "__main__":
+    main() 

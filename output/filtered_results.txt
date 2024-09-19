@@ -1,8 +1,0 @@
-Filtered Query Results
-(2, 'Adele', 1988, 'Pop')
-(4, 'Elton John', 1947, 'Pop')
-(8, 'Taylor Swift', 1989, 'Pop')
-(10, 'Billie Eilish', 2001, 'Pop')
-(12, 'Ariana Grande', 1993, 'Pop')
-(14, 'Bruno Mars', 1985, 'Pop')
-(15, 'Rihanna', 1988, 'Pop')

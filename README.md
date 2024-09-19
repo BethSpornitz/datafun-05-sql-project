@@ -62,35 +62,34 @@ def insert_data_from_csv(db_file_path, artists_data_path, songs_data_path)
 
 ## Create Python Script to exececute SQL operations  
 
-#### This will insert new records into the dabatse.
+#### This will execute the sql file which will insert new records into the dabatse.
 -def insert_new_records(db_file_path)  
 
 #### This function is to help you confirm that the data has been successfully inserted into the artists and songs tables. It acts as a quick check to ensure that the database operations (like inserts) have worked as intended.  
 -def verify_records(db_file_path)  
 
-
+#### This will execute the sql file which will delete run the sql code to delete records.
 def delete_records(db_file_path)  
 
-This query will produce a result set that indicates how many songs are associated with each artist.  
+#### This will execute the sql file which will produce a result set that indicates how many songs are associated with each artist.  
 -def query_aggregation(db_file_path, output_file_path)  
 
-
-This filters data by a specified data element (like filtering all of the pop songs).  
+#### This will execute the sql file which will filer data by a specified data element (like filtering all of the pop songs).  
 -def query_filter(db_file_path, output_file_path)  
 
 
-This will query the database and group the data (like showing how many songs each artist has in the table with one row for each artist).  
+#### This will execute the sql file which will query the database and group the data (like showing how many songs each artist has in the table with one row for each artist).  
 -def query_group_by(db_file_path, output_file_path)  
 
 
-This will join columns from tables together (like joining the artist with the song name).  
+#### This will execute the sql file which will join columns from tables together (like joining the artist with the song name).  
 -def query_join(db_file_path, output_file_path)  
 
 
-This will update a record already in the database.  
+#### This will execute the sql file which will update a record already in the database.  
 -def update_records(db_file_path)  
 
 
-This will write the results for a function to a specified file.  
+#### This will execute the sql file which will write the results for a function to a specified file.  
 -def write_results_to_file(results, output_file_path, title)  
 

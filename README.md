@@ -62,6 +62,7 @@ project.db (database file created using Python code)
 
 ## Create Python Script to exececute SQL operations  
 
+This will insert new records into the dabatse.
 def insert_new_records(db_file_path)  
 
 This function is to help you confirm that the data has been successfully inserted into the artists and songs tables. It acts as a quick check to ensure that the database operations (like inserts) have worked as intended.  
@@ -70,7 +71,7 @@ def verify_records(db_file_path)
 
 def delete_records(db_file_path)  
 
- #This query will produce a result set that indicates how many songs are associated with each artist.  
+ This query will produce a result set that indicates how many songs are associated with each artist.  
 def query_aggregation(db_file_path, output_file_path)  
 
 

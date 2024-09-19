@@ -62,10 +62,10 @@ def insert_data_from_csv(db_file_path, artists_data_path, songs_data_path)
 
 ## Create Python Script to exececute SQL operations  
 
-###This will insert new records into the dabatse.
+### This will insert new records into the dabatse.
 -def insert_new_records(db_file_path)  
 
-###This function is to help you confirm that the data has been successfully inserted into the artists and songs tables. It acts as a quick check to ensure that the database operations (like inserts) have worked as intended.  
+### This function is to help you confirm that the data has been successfully inserted into the artists and songs tables. It acts as a quick check to ensure that the database operations (like inserts) have worked as intended.  
 -def verify_records(db_file_path)  
 
 

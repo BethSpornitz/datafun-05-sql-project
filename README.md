@@ -116,7 +116,8 @@ def delete_records(db_file_path)
 
 ![alt text](image-4.png)
 
-###  This will executute a sql file which will sort data (like sort songs by order of release year).
+###  This will executute a sql file which will sort data (like sort songs by order of release year).  
+-def query_sorting(db_file_path, output_file_path)  
 
 ![alt text](image-3.png)
 

@@ -2,4 +2,4 @@ pathlib
 sqlite3
 pandas
 pyarrow
-requirements
+

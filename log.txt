@@ -585,3 +585,52 @@ sqlite3.OperationalError: near "Wind": syntax error
 2024-09-20 14:14:42,774 - INFO - Wrote results to output\join_results.txt
 2024-09-20 14:14:42,782 - INFO - Wrote results to output\sorting_results.txt
 2024-09-20 14:14:42,782 - INFO - Program ended
+2024-09-20 14:19:38,448 - INFO - Program started
+2024-09-20 14:19:38,681 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-20 14:19:38,739 - INFO - Deleted records using sql\delete_records.sql
+2024-09-20 14:19:38,761 - INFO - Updated records using sql\update_records.sql
+2024-09-20 14:19:38,768 - INFO - Wrote results to output\aggregation_results.txt
+2024-09-20 14:19:38,772 - INFO - Wrote results to output\filtered_results.txt
+2024-09-20 14:19:38,775 - INFO - Wrote results to output\group_by_results.txt
+2024-09-20 14:19:38,777 - INFO - Wrote results to output\join_results.txt
+2024-09-20 14:19:38,783 - INFO - Wrote results to output\sorting_results.txt
+2024-09-20 14:19:38,784 - INFO - Program ended
+2024-09-20 14:23:48,740 - INFO - Program started
+2024-09-20 14:25:56,469 - INFO - Program started
+2024-09-20 14:25:56,497 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-20 14:27:09,218 - INFO - Program started
+2024-09-20 14:27:09,250 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-20 14:27:09,300 - INFO - Deleted records using sql\delete_records.sql
+2024-09-20 14:27:09,304 - INFO - Updated records using sql\update_records.sql
+2024-09-20 14:27:09,307 - INFO - Wrote results to output\aggregation_results.txt
+2024-09-20 14:27:09,310 - INFO - Wrote results to output\filtered_results.txt
+2024-09-20 14:27:09,314 - INFO - Wrote results to output\group_by_results.txt
+2024-09-20 14:27:09,318 - INFO - Wrote results to output\join_results.txt
+2024-09-20 14:27:09,321 - INFO - Wrote results to output\sorting_results.txt
+2024-09-20 14:27:09,321 - INFO - Program ended
+2024-09-20 14:27:33,961 - INFO - Program started
+2024-09-20 14:27:33,997 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-20 14:27:34,070 - INFO - Deleted records using sql\delete_records.sql
+2024-09-20 14:27:34,075 - INFO - Updated records using sql\update_records.sql
+2024-09-20 14:27:34,079 - INFO - Wrote results to output\aggregation_results.txt
+2024-09-20 14:27:34,084 - INFO - Wrote results to output\filtered_results.txt
+2024-09-20 14:27:34,088 - INFO - Wrote results to output\group_by_results.txt
+2024-09-20 14:27:34,092 - INFO - Wrote results to output\join_results.txt
+2024-09-20 14:27:34,097 - INFO - Wrote results to output\sorting_results.txt
+2024-09-20 14:27:34,098 - INFO - Program ended
+2024-09-20 14:39:02,202 - INFO - Program started
+2024-09-20 14:39:02,240 - ERROR - Error inserting new records: no such table: artists
+Traceback (most recent call last):
+  File "c:\Users\beths\Documents\datafun-05-sql-project\db_operations_bethspornitz.py", line 65, in insert_new_records
+    conn.executescript(sql_script)
+sqlite3.OperationalError: no such table: artists
+2024-09-20 14:40:28,606 - INFO - Program started
+2024-09-20 14:40:28,633 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-20 14:40:28,682 - INFO - Deleted records using sql\delete_records.sql
+2024-09-20 14:40:28,709 - INFO - Updated records using sql\update_records.sql
+2024-09-20 14:40:28,717 - INFO - Wrote results to output\aggregation_results.txt
+2024-09-20 14:40:28,722 - INFO - Wrote results to output\filtered_results.txt
+2024-09-20 14:40:28,725 - INFO - Wrote results to output\group_by_results.txt
+2024-09-20 14:40:28,728 - INFO - Wrote results to output\join_results.txt
+2024-09-20 14:40:28,733 - INFO - Wrote results to output\sorting_results.txt
+2024-09-20 14:40:28,734 - INFO - Program ended

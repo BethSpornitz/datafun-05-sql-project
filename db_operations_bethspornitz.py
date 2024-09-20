@@ -4,6 +4,7 @@
 import sqlite3
 import pathlib
 import logging
+import pandas as pd
 
 
 ###############################
@@ -55,6 +56,19 @@ def insert_new_records(db_file_path):
             logging.info(f"Inserted new records from {insert_new_records_sql_path}")
     except sqlite3.Error as e:
         logging.exception(f"Error inserting new records: {e}")
+
+
+#  This function is to help you confirm that the data has been successfully inserted into the artists and songs tables. It acts as a quick check to ensure that the database operations (like inserts) have worked as intended.
+def verify_records(db_file_path):
+    """Verify records in the tables."""
+    try:
+        with sqlite3.connect(db_file_path) as conn:
+            artists_df = pd.read_sql_query("SELECT * FROM artists", conn)
+            songs_df = pd.read_sql_query("SELECT * FROM songs", conn)
+            print("Artists DataFrame:\n", artists_df)
+            print("Songs DataFrame:\n", songs_df)
+    except sqlite3.Error as e:
+        print(f"Error verifying records: {e}")
 
 
 def delete_records(db_file_path):
@@ -192,8 +206,8 @@ def write_results_to_file(results, output_file_path, title):
 
 def main():
     logging.info("Program started")
-    
     insert_new_records(db_file_path)
+    verify_records(db_file_path)
     delete_records(db_file_path)
     update_records(db_file_path)
 

@@ -541,3 +541,27 @@ sqlite3.OperationalError: near "Wind": syntax error
 2024-09-19 18:11:40,036 - INFO - Wrote results to output\join_results.txt
 2024-09-19 18:11:40,039 - INFO - Wrote results to output\sorting_results.txt
 2024-09-19 18:11:40,040 - INFO - Program ended
+2024-09-19 18:25:39,606 - INFO - Program started
+2024-09-19 18:25:39,883 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-19 18:25:39,957 - INFO - Deleted records using sql\delete_records.sql
+2024-09-19 18:25:39,987 - INFO - Updated records using sql\update_records.sql
+2024-09-19 18:25:40,000 - INFO - Wrote results to output\aggregation_results.txt
+2024-09-19 18:25:40,003 - INFO - Wrote results to output\filtered_results.txt
+2024-09-19 18:25:40,013 - INFO - Wrote results to output\group_by_results.txt
+2024-09-19 18:25:40,020 - INFO - Wrote results to output\join_results.txt
+2024-09-19 18:25:40,031 - INFO - Wrote results to output\sorting_results.txt
+2024-09-19 18:25:40,031 - INFO - Program ended
+2024-09-20 14:04:15,354 - INFO - Program started
+2024-09-20 14:04:15,390 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-20 14:06:11,927 - INFO - Program started
+2024-09-20 14:06:11,958 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-20 14:06:35,838 - INFO - Program started
+2024-09-20 14:06:35,873 - INFO - Inserted new records from sql\insert_new_records.sql
+2024-09-20 14:06:35,902 - INFO - Deleted records using sql\delete_records.sql
+2024-09-20 14:06:35,943 - INFO - Updated records using sql\update_records.sql
+2024-09-20 14:06:35,977 - INFO - Wrote results to output\aggregation_results.txt
+2024-09-20 14:06:35,998 - INFO - Wrote results to output\filtered_results.txt
+2024-09-20 14:06:36,014 - INFO - Wrote results to output\group_by_results.txt
+2024-09-20 14:06:36,036 - INFO - Wrote results to output\join_results.txt
+2024-09-20 14:06:36,052 - INFO - Wrote results to output\sorting_results.txt
+2024-09-20 14:06:36,053 - INFO - Program ended

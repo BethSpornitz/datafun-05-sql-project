@@ -192,20 +192,6 @@ def write_results_to_file(results, output_file_path, title):
 
 def main():
     logging.info("Program started")
-
-    paths_to_verify = [
-        pathlib.Path('sql') / 'create_tables.sql', 
-        pathlib.Path('sql') / 'insert_new_records.sql',
-        pathlib.Path('sql') / 'delete_records.sql',
-        pathlib.Path('sql') / 'query_aggregation.sql',
-        pathlib.Path('sql') / 'query_filter.sql',
-        pathlib.Path('sql') / 'query_group_by.sql',
-        pathlib.Path('sql') / 'query_join.sql',
-        pathlib.Path('sql') / 'query_sorting.sql',
-        pathlib.Path('sql') / 'update_records.sql',
-        pathlib.Path('data') / 'artists.csv', 
-        pathlib.Path('data') / 'songs.csv'
-    ]
     
     insert_new_records(db_file_path)
     delete_records(db_file_path)
